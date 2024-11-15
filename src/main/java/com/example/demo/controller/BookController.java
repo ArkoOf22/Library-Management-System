@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.AdminCreateRequest;
 import com.example.demo.dto.BookCreateRequest;
-import com.example.demo.models.Admin;
 import com.example.demo.models.Book;
 import com.example.demo.service.BookService;
 import jakarta.validation.Valid;
@@ -20,6 +18,6 @@ public class BookController {
     public String createBook(@RequestBody @Valid BookCreateRequest bookCreateRequest) {
         Book book=bookCreateRequest.toBook();
         bookService.saveBook(book);
-        return book.getName() + " is added to the database";
+        return book.getName() + " is added to the book database";
     }
 }
