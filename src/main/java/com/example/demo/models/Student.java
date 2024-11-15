@@ -1,11 +1,10 @@
 package com.example.demo.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,4 +19,16 @@ public class Student {
     private Integer id;
 
     private String name;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Column(unique = true, nullable = false)
+    private String rollNumber;
+
+    @OneToMany(mappedBy = "student")
+    private List<Book> book;
+
+    @OneToMany(mappedBy = "student")
+    private List<Transaction> transactionList;
 }
