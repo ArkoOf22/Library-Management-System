@@ -10,7 +10,7 @@ public class AuthorService {
     @Autowired
     AuthorRepository authorRepository;
 
-    public Author saveAuthor(Author author) {
+    public Author getOrCreate(Author author) {
         Author exists=authorRepository.findByEmail(author.getEmail());
         if(exists==null)
             exists=authorRepository.save(author);
