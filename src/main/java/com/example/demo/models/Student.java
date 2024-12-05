@@ -3,7 +3,10 @@ package com.example.demo.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -25,6 +28,14 @@ public class Student {
 
     @Column(unique = true, nullable = false)
     private String rollNumber;
+
+    private Integer age;
+
+    @CreationTimestamp
+    private Date createdOn;
+
+    @UpdateTimestamp
+    private Date updatedOn;
 
     @OneToMany(mappedBy = "student")
     private List<Book> book;

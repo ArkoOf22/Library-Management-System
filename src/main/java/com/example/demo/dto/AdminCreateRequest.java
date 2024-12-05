@@ -2,7 +2,6 @@ package com.example.demo.dto;
 
 
 import com.example.demo.models.Admin;
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
